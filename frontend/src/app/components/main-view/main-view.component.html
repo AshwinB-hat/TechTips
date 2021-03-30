@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row">
+
+
+    <div class="col-sm-3 col-md-3 sidebar">
+      <div (click)="toggleTopicMenu('large')" id="menu-large" class="container pb-4 dark-grey-background toggled">
+      <div class="text-center mt-5 mb-4">
+        <h2 class="white-color">Topics </h2>
+      </div>
+
+      <div class="container">
+        <div *ngFor="let topic of mainTopics">
+          <div class="mt-2" >
+            <button type="button" (click)="buttonClick(topic.id)" id="btn-{{topic.id}}" class="btn btn-outline-light btn-block">{{topic.name}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center toggle-button" id="menu-small" (click)="toggleTopicMenu('small')"><mat-icon>menu</mat-icon></div>
+    </div>
+
+    <!-- <nav class="navbar flex-column sticky-top navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav dark-grey-background">
+            <li *ngFor="let topic of mainTopics"><button (click)="buttonClick(topic.id)" id="btn-{{topic.id}}" class="btn btn-outline-light btn-block">{{topic.name}}</button></li>
+          </ul>
+      </div>
+
+    </nav> -->
+
+
+
+    <div class="col">
+      <div class="container mt-5">
+        <div class="row">
+          <div *ngFor="let tutorial of tutorials" class="col-md-4">
+          <div class="card mb-3 shadow text-center" style="max-width: 540px;">
+                <img src="{{tutorial.imageUrl}}" class="card-img m-auto" alt="...">
+                <div class="card-body">
+                  <h3 class="card-title">{{tutorial.name}}</h3>
+                </div>
+            <a routerLink="{{selectedTopicId}}/tutorial/{{tutorial.id}}" class="stretched-link"></a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

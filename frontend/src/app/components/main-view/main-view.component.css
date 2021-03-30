@@ -1,0 +1,52 @@
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+.toggle-button {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .card-img{
+        height:12em;
+        width: 12em;
+    }
+    .sidebar{
+        position: sticky;
+        position: -webkit-sticky;
+        margin-top: 0;
+        top:0;
+        z-index: 999;
+        background-color: darkgray;
+    }
+
+    .toggled{
+        display: none;
+    }
+
+    .toggle-button{
+        display: block;
+    }
+} 
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .card-img{
+        height:12em;
+        width: 12em;
+    }
+} 
+
+@media only screen and (min-width: 1200px) {
+    .card-img{
+        height:5em;
+        width: 5em;
+    }
+}
+
+.dark-grey-background{
+    background-color: darkgray;
+}
+
+.white-color{
+    color:white;
+}
+
+
+
