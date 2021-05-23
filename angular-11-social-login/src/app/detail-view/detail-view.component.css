@@ -1,0 +1,74 @@
+.toggle-button {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .sidebar{
+        position: sticky;
+        position: -webkit-sticky;
+        margin-top: 0;
+        top:0;
+        z-index: 999;
+        background-color: darkgray;
+    }
+
+    .toggled{
+        display: none;
+    }
+
+    .toggle-button{
+        display: block;
+    }
+} 
+
+
+.content {
+    height: 100vh;
+    padding-left: 0%;
+}
+
+::ng-deep .light-gray-background {
+    background-color: lightgray;
+}
+
+
+.white-background {
+    background-color: white;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.red{
+    color: red;
+}
+
+::ng-deep a:hover {
+    text-decoration: none;
+}
+
+::ng-deep .highlight-hover:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+page{
+    padding-left: 0%;
+}
+
+#comment-list{
+    list-style: none;
+    padding-left: 0;
+}
+
+#comment-item{
+    border: solid 1px gray;
+    margin-top:10px;
+    padding: 3px;
+    box-shadow: 5px 5px lightgray;
+}

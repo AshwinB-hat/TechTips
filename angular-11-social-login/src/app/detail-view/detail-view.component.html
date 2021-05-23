@@ -1,0 +1,44 @@
+<div class="light-gray-background container-fluid content">
+  <div class="row light-gray-background">
+  <div class="col-sm-3 col-md-3 sidebar sticky-top">
+    <div (click)="toggleTopicMenu('large')" id="menu-large">
+    <div class="btn-group btn-group-toggle container mb-2 pt-5">
+      <button (click)="toggleContent()" id="tutorial" class="btn btn-secondary active">
+        Tutorial
+      </button>
+      <button (click)="toggleContent()" id="excercise" class="btn btn-secondary">
+        Excercise
+      </button>
+    </div>
+    <nav class="navbar flex-column sticky-top">
+      <ul class='navbar-nav shadow p-3 white-background' id="content-table">
+      </ul>
+    </nav>
+    </div>
+    <div class="text-center toggle-button toggled" id="menu-small" (click)="toggleTopicMenu('small')"><mat-icon>menu</mat-icon></div>
+  </div>
+  <div class="col pt-5">
+    <div class="container shadow p-3 pb-5 white-background" id="page-toc">
+      <markdown [data]="currentDisplay"></markdown>
+      <a class="left" href="{{this.topicId}}/{{state}}/{{this.currentId}}#{{this.currentDisplayId-1}}"><button *ngIf="currentDisplayId>0" class="btn btn-secondary">prev</button></a>
+      <a class="right" href="{{this.topicId}}/{{state}}/{{this.currentId}}#{{this.currentDisplayId+1}}"><button *ngIf="displayNextButton()" class="btn btn-secondary mr-0">next</button></a>
+    </div>
+    <div class="container shadow mt-3 p-3 white-background" id="comment-section">
+      <h2> Comments </h2>
+      <ul id="comment-list">
+        <li id="comment-item" *ngFor="let comment of comments">
+          <div class="container">
+            <p><b>{{comment.userName}}</b> - {{comment.timestamp}}</p>
+            <p>{{comment.comment}}</p>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="comment" placeholder="Leave a Comment">
+         </div> <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  </div>
+</div>
